@@ -54,5 +54,6 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1"
-  }
+  },
+  "homepage": "https://ebnz.github.io/Nightsky/build/"
 }
