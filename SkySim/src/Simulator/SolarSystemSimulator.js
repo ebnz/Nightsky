@@ -128,7 +128,7 @@ class GravitationalObject {
      * @param {[number, number, number]} velocity - Velocity of the Object
      */
     constructor(id, mass, radius, position, velocity) {
-        this.MAX_TRAJECTORY_LENGTH = 64;
+        this.MAX_TRAJECTORY_LENGTH = 128;
 
         this.id = id;
         this.mass = mass;
