@@ -60,9 +60,9 @@ export class Renderer {
 
     this.cam = new Camera(
         this.gl.canvas,
+        [0, 1, 1],
         [0, 0, 0],
-        [-1, 0, 0],
-        [0, 1, 0]
+        [0, 0, 1]
     );
 
     this.cam.update(0.0);
