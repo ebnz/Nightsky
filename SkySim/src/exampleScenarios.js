@@ -43,7 +43,7 @@ export const scenarios = [
                 "id": 1,
                 "name": "Merkur",
                 "pos": [0.387098 * 149597870.7, 0, 0],
-                "vel": [0, 0, 47.36],
+                "vel": [0, 47.36, 0],
                 "mass": 3.301 * Math.pow(10, 23),
                 "radius": 4881
             },
@@ -51,7 +51,7 @@ export const scenarios = [
                 "id": 2,
                 "name": "Venus",
                 "pos": [0.7233 * 149597870.7, 0, 0],
-                "vel": [0, 0, 35.02],
+                "vel": [0, 35.02, 0],
                 "mass": 4.8673 * Math.pow(10, 24),
                 "radius": 12103
             },
@@ -59,7 +59,7 @@ export const scenarios = [
                 "id": 3,
                 "name": "Earth",
                 "pos": [149597870.7, 0, 0],
-                "vel": [0, 0, 29.78],
+                "vel": [0, 29.78, 0],
                 "mass": 5.972 * Math.pow(10, 24),
                 "radius": 12756
             },
@@ -67,7 +67,7 @@ export const scenarios = [
                 "id": 4,
                 "name": "Mars",
                 "pos": [1.524 * 149597870.7, 0, 0],
-                "vel": [0, 0, 24.07],
+                "vel": [0, 24.07, 0],
                 "mass": 6.417 * Math.pow(10, 23),
                 "radius": 6792
             },
@@ -75,7 +75,7 @@ export const scenarios = [
                 "id": 5,
                 "name": "Jupiter",
                 "pos": [5.204 * 149597870.7, 0, 0],
-                "vel": [0, 0, 13.06],
+                "vel": [0, 13.06, 0],
                 "mass": 1.89813 * Math.pow(10, 27),
                 "radius": 142984
             },
@@ -83,7 +83,7 @@ export const scenarios = [
                 "id": 6,
                 "name": "Saturn",
                 "pos": [9.582 * 149597870.7, 0, 0],
-                "vel": [0, 0, 9.68],
+                "vel": [0, 9.68, 0],
                 "mass": 5.683 * Math.pow(10, 26),
                 "radius": 120536
             },
@@ -91,7 +91,7 @@ export const scenarios = [
                 "id": 7,
                 "name": "Uranus",
                 "pos": [19.201 * 149597870.7, 0, 0],
-                "vel": [0, 0, 6.81],
+                "vel": [0, 6.81, 0],
                 "mass": 8.681 * Math.pow(10, 25),
                 "radius": 51118
             },
@@ -99,7 +99,7 @@ export const scenarios = [
                 "id": 8,
                 "name": "Neptun",
                 "pos": [30.178 * 149597870.7, 0, 0],
-                "vel": [0, 0, 5.455],
+                "vel": [0, 5.455, 0],
                 "mass": 1.024 * Math.pow(10, 26),
                 "radius": 49528
             }
@@ -121,7 +121,7 @@ export const scenarios = [
                 "id": 1,
                 "name": "Merkur",
                 "pos": [0.387098 * 149597870.7, 0, 0],
-                "vel": [0, 0, 47.36],
+                "vel": [0, 47.36, 0],
                 "mass": 3.301 * Math.pow(10, 29),
                 "radius": 4881
             },
@@ -129,7 +129,7 @@ export const scenarios = [
                 "id": 2,
                 "name": "Venus",
                 "pos": [0.7233 * 149597870.7, 0, 0],
-                "vel": [0, 0, 35.02],
+                "vel": [0, 35.02, 0],
                 "mass": 4.8673 * Math.pow(10, 24),
                 "radius": 12103
             },
@@ -137,7 +137,7 @@ export const scenarios = [
                 "id": 3,
                 "name": "Earth",
                 "pos": [1 * 149597870.7, 0, 0],
-                "vel": [0, 0, 29.78],
+                "vel": [0, 29.78, 0],
                 "mass": 5.972 * Math.pow(10, 24),
                 "radius": 12756
             },
@@ -145,7 +145,7 @@ export const scenarios = [
                 "id": 4,
                 "name": "Mars",
                 "pos": [1.524 * 149597870.7, 0, 0],
-                "vel": [0, 0, 24.07],
+                "vel": [0, 24.07, 0],
                 "mass": 6.417 * Math.pow(10, 23),
                 "radius": 6792
             },
@@ -153,7 +153,7 @@ export const scenarios = [
                 "id": 5,
                 "name": "Jupiter",
                 "pos": [5.204 * 149597870.7, 0, 0],
-                "vel": [0, 0, 13.06],
+                "vel": [0, 13.06, 0],
                 "mass": 1.89813 * Math.pow(10, 27),
                 "radius": 142984
             },
@@ -161,7 +161,7 @@ export const scenarios = [
                 "id": 6,
                 "name": "Saturn",
                 "pos": [9.582 * 149597870.7, 0, 0],
-                "vel": [0, 0, 9.68],
+                "vel": [0, 9.68, 0],
                 "mass": 5.683 * Math.pow(10, 26),
                 "radius": 120536
             },
@@ -169,7 +169,7 @@ export const scenarios = [
                 "id": 7,
                 "name": "Uranus",
                 "pos": [19.201 * 149597870.7, 0, 0],
-                "vel": [0, 0, 6.81],
+                "vel": [0, 6.81, 0],
                 "mass": 8.681 * Math.pow(10, 25),
                 "radius": 51118
             },
@@ -177,7 +177,7 @@ export const scenarios = [
                 "id": 8,
                 "name": "Neptun",
                 "pos": [30.178 * 149597870.7, 0, 0],
-                "vel": [0, 0, 5.455],
+                "vel": [0, 5.455, 0],
                 "mass": 1.024 * Math.pow(10, 26),
                 "radius": 49528
             }

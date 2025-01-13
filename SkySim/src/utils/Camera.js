@@ -119,7 +119,7 @@ export class Camera {
 
   //move camera up by given distance (not used at the moment)
   moveUp(dist) {
-    vec3.scaleAndAdd(this.pos, this.pos, [0, 1, 0], dist);
+    vec3.scaleAndAdd(this.pos, this.pos, [0, 0, 1], dist);
   }
 
   update(dt) {
