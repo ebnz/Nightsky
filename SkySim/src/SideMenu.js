@@ -290,6 +290,7 @@ export function SideMenu({getGL}) {
   const [timeSliderValue, setTimeSliderValue] = useState([1]);
   const [timeFactor, setTimeFactor] = useState("1")
   const [subSteps, setSubSteps] = useState([1]);
+  const [trajectoryLength, setTrajectoryLength] = useState([128]);
 
   //States which represent if the SideMenu is opened and whether the Animation is running/paused
   const [open, setOpen] = useState(true);
@@ -389,9 +390,11 @@ export function SideMenu({getGL}) {
    * Uploads all Simulation-Data to the Simulator
    * @param {number} gBase - Base of Universal Gravitational Constant
    * @param {number} gExp - Exponent of Universal Gravitational Constant
+   * @param {number[]} trajLength - Length of Trajectories in Simulation
    */
-  function uploadSimulationData(gBase, gExp) {
+  function uploadSimulationData(gBase, gExp, trajLength) {
     simulator.gamma = gBase * Math.pow(10, gExp);
+    simulator.trajectoryLength = trajLength[0];
   }
 
   /**
@@ -424,7 +427,7 @@ export function SideMenu({getGL}) {
       setDatetime(animationStartDatetime);
       simulator.applyDataUpdate(data);
       uploadRendererData(timeFactor, timeSliderValue, subSteps);
-      uploadSimulationData(gBase, gExp);
+      uploadSimulationData(gBase, gExp, trajectoryLength);
       renderer.startRender();
       setAnimating(true);
     }
@@ -436,7 +439,7 @@ export function SideMenu({getGL}) {
    */
   function gBaseChange(e) {
     setGBase(e.target.value);
-    uploadSimulationData(e.target.value, gExp);
+    uploadSimulationData(e.target.value, gExp, trajectoryLength);
   }
 
   /**
@@ -445,7 +448,16 @@ export function SideMenu({getGL}) {
    */
   function gExpChange(e) {
     setGExp(e.target.value);
-    uploadSimulationData(gBase, e.target.value);
+    uploadSimulationData(gBase, e.target.value, trajectoryLength);
+  }
+
+  /**
+   * Event Handler for change of the trajectoryLength
+   * @param newValue
+   */
+  function trajectoryLengthChange(newValue) {
+    setTrajectoryLength(newValue);
+    uploadSimulationData(gBase, gExp, newValue);
   }
 
   /**
@@ -614,6 +626,25 @@ export function SideMenu({getGL}) {
           <br/>
 
           <div className="grid gap-2 items-center grid-cols-10">
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Label className="col-span-2 w-30" htmlFor="timeFactor"><Badge>Trajectory Length</Badge></Label>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Length of Trajectories in Simulation</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <Slider className="col-span-3 h-8 w-30" value={trajectoryLength} min={128} max={2048}
+                    onValueChange={trajectoryLengthChange}></Slider>
+            <Label className="w-20">{`${trajectoryLength} Steps`}</Label>
+          </div>
+
+          <br/>
+
+          <div className="grid gap-2 items-center grid-cols-10">
             <div className="col-span-7 h-8 w-30"/>
             <Button variant={animating ? "destructive" : ""} className="col-span-3 h-8 w-30"
                     onClick={handleAnimate}>{animating ? "Abort Animation" : "Start Animation"}</Button>
@@ -642,5 +673,5 @@ export function SideMenu({getGL}) {
         </SheetContent>
       </Sheet>
     </div>
-);
+  );
 }
