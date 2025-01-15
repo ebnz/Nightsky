@@ -90,6 +90,12 @@ let searchMap;
             const newLookAt = searchMap.get(searchValue);
             const cam = getCam();
             cam.newLookAt(newLookAt);
+            //Activate StarSign's Connections
+            changeSigns(searchValue);
+            //Toggle Checkbox
+            nodelist = document.getElementsByName(searchValue);
+            element = [...nodelist].filter((item) => item.type === "checkbox")[0];
+            element.checked = !element.checked;
         }
     }
 
@@ -260,7 +266,7 @@ let searchMap;
             const checkBox = document.createElement("input");
             // Change the parameter of the checkbox.
             checkBox.type = "checkbox";
-            checkBox.name = starSigns[i];
+            checkBox.name = starSigns[i].toLowerCase();
             checkBox.onclick = function () {
                 changeSigns(checkBox.name); // This is defined in scene.js.
             }
