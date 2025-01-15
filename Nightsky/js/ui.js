@@ -90,12 +90,14 @@ let searchMap;
             const newLookAt = searchMap.get(searchValue);
             const cam = getCam();
             cam.newLookAt(newLookAt);
-            //Activate StarSign's Connections
-            changeSigns(searchValue);
-            //Toggle Checkbox
+            //Toggle Checkbox if off
             nodelist = document.getElementsByName(searchValue);
             element = [...nodelist].filter((item) => item.type === "checkbox")[0];
-            element.checked = !element.checked;
+            if (!element.checked) {
+                element.checked = !element.checked;
+                //Activate StarSign's Connections
+                changeSigns(searchValue);
+            }
         }
     }
 

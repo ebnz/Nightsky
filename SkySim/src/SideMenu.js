@@ -637,7 +637,7 @@ export function SideMenu({getGL}) {
               </Tooltip>
             </TooltipProvider>
 
-            <Slider className="col-span-3 h-8 w-30" value={trajectoryLength} min={128} max={2048}
+            <Slider className="col-span-3 h-8 w-30" value={trajectoryLength} min={128} max={2048} disabled={animating}
                     onValueChange={trajectoryLengthChange}></Slider>
             <Label className="w-20">{`${trajectoryLength} Steps`}</Label>
           </div>
