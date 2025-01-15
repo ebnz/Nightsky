@@ -9,6 +9,7 @@ export class SolarSystemSimulator {
      */
     constructor(gamma) {
         this.gamma = gamma;
+        this.trajectoryLength = 128;
 
         //[Mass in kg, Radius in ?, Position in AU, Velocity in m/s]
         this.objects = [];
@@ -106,7 +107,8 @@ export class SolarSystemSimulator {
                 elem.mass,
                 elem.radius,
                 elem.pos,
-                elem.vel
+                elem.vel,
+                this.trajectoryLength
             )
         );
         let objectsCopy = this.objects.filter((elem, idx) => elem.id === -1);
@@ -126,15 +128,15 @@ class GravitationalObject {
      * @param {number} radius - Radius of the Object
      * @param {[number, number, number]} position - Position of the Object
      * @param {[number, number, number]} velocity - Velocity of the Object
+     * @param {number} trajectoryLength - Length of the Trajectory of this Object
      */
-    constructor(id, mass, radius, position, velocity) {
-        this.MAX_TRAJECTORY_LENGTH = 128;
-
+    constructor(id, mass, radius, position, velocity, trajectoryLength) {
         this.id = id;
         this.mass = mass;
         this.radius = radius;
         this._position = position;
         this.velocity = velocity;
+        this.MAX_TRAJECTORY_LENGTH = trajectoryLength;
         this.color = hexToRGB(idToColor(this.id));
 
         this.bufferContent = [];

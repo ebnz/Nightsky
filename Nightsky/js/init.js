@@ -119,7 +119,12 @@ function main() {
         getDataMap("./starData/conns_HIP.csv")  // Data of the connections.
     );
     const stars = starSigns[0];
-    const signs = starSigns[1];
+
+    const signs = new Map();
+    starSigns[1].forEach((val, key) => {
+        signs.set(key.toLowerCase(), val);
+    })
+
     const starMap = starSigns[2];
 
     for (let i = 0; i < stars.length; i++) {
@@ -135,7 +140,7 @@ function main() {
         const signsList = starMap.get(stars[i][0]);
         for (let j = 0; j < signsList.length; j++) {
             // Get the list of HIPs in the j-th star sign.
-            const indexList = signs.get(signsList[j]);
+            const indexList = signs.get(signsList[j].toLowerCase());
             // Swap the HIP of the i-th star to the index.
             for (let k = 0; k < indexList.length; k++) {
                 if (indexList[k] == stars[i][0]) {

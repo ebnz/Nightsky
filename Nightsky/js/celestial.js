@@ -927,7 +927,7 @@ class BackgroundStar extends CelestialBody {
         super.select();
         setInfoText(`${this.name == "" ? "Star" : this.name} ${this.cst} ${this.bayer}\r\n` +
             getInfoText() +
-            `\r\nDistance ${distance} pc` +
+            `\r\nDistance ${distance.toFixed(3)} pc from Earth` +
             "\r\nMiddle Mouse Button on 2 Stars to connect them"
         );
         vec3.scale(this.scale, this.scale, 4);
